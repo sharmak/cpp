@@ -5,13 +5,20 @@
  *      Author: kishor
  */
 
+#include <iostream>
 #include "Explicit.h"
 
-Explicit::Explicit() {
-	// TODO Auto-generated constructor stub
 
+Explicit::Explicit() {
 }
 
+Explicit::Explicit(int val) {
+	std::cout << "Calling constructor with integer argument" << std::endl;
+}
+
+Explicit::Explicit(double val) {
+	std::cout << "Calling constructor with double argument" << std::endl;
+}
 Explicit::~Explicit() {
 	// TODO Auto-generated destructor stub
 }

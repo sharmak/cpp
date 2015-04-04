@@ -11,6 +11,8 @@
 class Explicit {
 public:
 	Explicit();
+	Explicit(int val);
+	explicit Explicit(double val);
 	virtual ~Explicit();
 };
 
