@@ -1,7 +1,14 @@
 #include <iostream>
+#include <cstring>
+
+
+
 #include "Explicit.h"
 #include "Vector.h"
 #include "Stock.h"
+#include "Time.h"
+#include "MyString.h"
+#include "MyLogger.h"
 using namespace std;
 
 // Function to test explicit functionality
@@ -62,8 +69,37 @@ void test_stock() {
 	};
 }
 
-int main() {
-	//explicit_test();
-	test_stock();
+void test_time() {
 
+	// Create time object
+	Time t1(2, 20);
+	Time t2(5, 10);
+	t2.show();
+	Time t3 = t1 + t2;
+	t3.show();
+	Time t4 = t2 - t1;
+	t4.show();
+	Time t5 = t1 + t2 + t3 + t4;
+	t5.show();
+	Time t6 = 2 * t5;
+	t6.show();
+	cout << t6;
+	cout << int(t6);
+}
+
+void test_mystring() {
+	MyString s("kishor");
+	cout << s;
+
+	MyString s1 = s;
+	cout << s1;
+}
+
+#define INFO BOOST_LOG_TRIVIAL(info)
+int main() {
+	init_logging();
+	//explicit_test();
+	//test_stock();
+	//test_time();
+	test_mystring();
 }
